@@ -7,6 +7,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/artificial-intelligence.png">
     <style>
+        /* Make profile photo display properly */
+.profile-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This crops the image to fill the circle */
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initially hidden - will show when image loads */
+    transition: opacity 0.3s ease;
+}
+
+/* Show image when it loads */
+.profile-photo-card img.loaded {
+    opacity: 1;
+}
+
+/* Hide placeholder icon when image is present */
+.profile-photo-card.has-image .photo-placeholder i {
+    display: none;
+}
+
+/* Position image container properly */
+.profile-photo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style the placeholder div */
+.photo-placeholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
         :root {
             --primary: #7f5af0;
             --secondary: #2cb67d;
